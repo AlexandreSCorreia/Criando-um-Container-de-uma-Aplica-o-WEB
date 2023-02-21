@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: ./dio_projeto_netflix
+      dockerfile: Dockerfile
+    container_name: web-container
+    environment:
+      - TZ=America/Sao_Paulo
+    ports:
+      - "8081:80"
+    networks:
+      - minha-rede
+    restart: always
+    depends_on:
+      - api
+  api:
+    build: 
+      context: ./api
+      dockerfile: Dockerfile
+    container_name: api-container
+    ports:
+      - "9007:5000"
+    networks:
+      - minha-rede 
+    restart: always
+networks:
+   minha-rede:
+     driver: bridge

@@ -1,0 +1,108 @@
+/*Declarar variavel */
+
+:root{
+    --vermelho: #E50914;
+    --preta: #141414;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; /* fazer os elementos em tela ter exatamente o tamanho especificado*/
+}
+
+/* Elementos base*/
+
+body{
+   background-color: var(--preta);
+   font-family: 'Times New Roman', Times, serif;
+   color: white;
+}
+
+header .container{
+   display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+header .logo{
+    font-family: 'Arial Black', Times;
+    color: var(--vermelho);
+    font-size: 40px;
+
+}
+
+header nav a{
+    text-decoration: none;
+    color: #AAA;
+     margin-right: 10px;
+}
+
+header nav a:hover{
+    color: #fff;
+}
+
+
+/* Filme principal */
+.filme-principal{
+    font-size: 16px;
+    background: linear-gradient(rgba(0,0,0,.50),rgba(0,0,0,.50)100%), url("../img/banner.jpg");
+    height: 500px;
+    background-size: cover;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.container{
+    margin-left: 30px;
+}
+
+.filme-principal .container{
+   width: 70%;
+}
+
+.filme-principal .container .titulo{
+    margin-top: 15%;
+    font-size: 40px;
+}
+
+.filme-principal .container .descricao{
+    margin-top: 10px;
+    margin-bottom: 90px;
+}
+
+.filme-principal .container .botao{
+    background-color: rgba(0, 0, 0, .50);
+    border: none;
+    color: white;
+    padding: 15px 30px;
+    margin-right: 15px;
+    font-size: 12px;
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    cursor: pointer;
+    transition: .3s ease all;
+}
+
+.filme-principal .container .botao:hover{
+    background-color: white;
+    color: black;
+}
+
+.filme-principal .container .botao i{
+    margin-right: 8px;
+}
+
+.box-filme{
+    height: 100%;
+    width: 100%;
+    display: block; 
+}
+
+
+.carrosel-filmes{
+    margin-top: 10px;
+}
+
