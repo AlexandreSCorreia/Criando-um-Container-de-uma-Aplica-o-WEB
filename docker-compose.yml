@@ -2,29 +2,51 @@ version: '3.8'
 
 services:
   web:
-    build:
-      context: ./dio_projeto_netflix
-      dockerfile: Dockerfile
     container_name: web-container
-    environment:
-      - TZ=America/Sao_Paulo
+    build:
+      context: ./web
+      dockerfile: Dockerfile
     ports:
-      - "8081:80"
+      - "8081:5002"
     networks:
       - minha-rede
+    environment:
+      API_ENDE: api
+      API_PORT: 5000
     restart: always
     depends_on:
       - api
   api:
-    build: 
-      context: ./api
-      dockerfile: Dockerfile
     container_name: api-container
+    build: 
+      context: ./app
+      dockerfile: Dockerfile
+    environment:
+      DB_HOST: db
+      DB_NAME: FilmesDb
+      DB_USER: SA
+      DB_PASSWORD: Numsey#2022
     ports:
       - "9007:5000"
-    networks:
-      - minha-rede 
     restart: always
+    networks:
+      - minha-rede
+    depends_on:
+      - db
+  db:
+    container_name: mssql-container
+    build: 
+      context: ./db
+      dockerfile: Dockerfile
+    environment:
+      - TZ=America/Sao_Paulo
+    ports:
+      - 1450:1433
+    volumes:
+      - c:\dados\volumes\mssql:/var/opt/mssql/data
+    restart: always
+    networks:
+      - minha-rede
 networks:
    minha-rede:
      driver: bridge

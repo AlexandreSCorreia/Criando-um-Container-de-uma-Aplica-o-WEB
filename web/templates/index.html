@@ -8,11 +8,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="style/owl/owl.carousel.min.css">
-    <link rel="stylesheet" href="style/owl/owl.theme.default.min.css">
-    <link rel="stylesheet" href="style/style.css">
-    <link rel="stylesheet" href="style/responsive.css">
-    <title>NETFLIX CLONE</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/owl/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/owl/owl.theme.default.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/responsive.css') }}">
+
+
+    <title>{{ data['titulo'] }}</title>
 </head>
 
 <body>
@@ -55,14 +58,19 @@
         </div>
 
         <div class="carrosel-filmes">
-            <div class="owl-carousel owl-theme" id="js-carrosel-filmes">
+            <div class="owl-carousel owl-theme">
+                {% for item in data['filmes']: %}
+                <div class="item">
+                    <img class="box-filme" src="{{ item['imagem'] }}" alt="">
+                </div>
+                {% endfor%}
             </div>
         </div>
     </main>
 
-    <script src="js/owl/jquery.min.js"></script>
-    <script src="js/owl/owl.carousel.min.js"></script>
-    <script src="js/script.js"></script>
+    <script src="{{ url_for('static', filename='js/owl/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/owl/owl.carousel.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 
 </html>

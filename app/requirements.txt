@@ -1,0 +1,9 @@
+# Bibliotecas de Web
+Flask==2.2.2 # Framework web para Python
+flask-cors==3.0.10 # Extensão Flask para suporte a CORS
+
+# Bibliotecas de Banco de dados
+pyodbc==4.0.35 # Driver ODBC para Python
+
+#pip3 show pyodb
+#pip3 show Flask

@@ -46,7 +46,7 @@ header nav a:hover{
 /* Filme principal */
 .filme-principal{
     font-size: 16px;
-    background: linear-gradient(rgba(0,0,0,.50),rgba(0,0,0,.50)100%), url("../img/banner.jpg");
+    background: linear-gradient(rgba(0,0,0,.50),rgba(0,0,0,.50)100%), url("../images/banner.jpg");
     height: 500px;
     background-size: cover;
 
