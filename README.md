@@ -16,7 +16,7 @@ Neste projeto fui além e fiz alterações mais robustas em comparação ao desa
 3. Será que você consegue executar uma aplicação web completa? 
 4. Subir o arquivo YML e a aplicação para um repositório no GitHub.
 
-Então no caso foi criado um container com o site com flask que faz uma requisição a outro container que tem a api em flask também que se comunica com o container do banco de dados sql server e retorna uma lista de filmes cadastrados no banco.
+Foi desenvolvido um container contendo uma aplicação web com Flask, que realiza uma requisição a outro container contendo uma API em Flask. A API, por sua vez, se comunica com um container do banco de dados SQL Server e retorna uma lista de filmes cadastrados no banco.
 
 
 ## :hammer: Tecnologias
